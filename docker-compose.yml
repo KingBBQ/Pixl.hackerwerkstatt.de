@@ -1,0 +1,13 @@
+services:
+  pixl-web:
+    build: .
+    restart: always
+    networks:
+      - web
+    labels:
+      caddy: pixl.hackerwerkstatt.de
+      caddy.reverse_proxy: "{{upstreams 80}}"
+
+networks:
+  web:
+    external: true

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixl - Der Geist der Hackerwerkstatt</title>
+    <meta name="description"
+        content="Entdecke die Geschichte von Pixl, dem kleinen Hacker-Geist, und spiele das Mini-Game Pixl Debugger.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Share+Tech+Mono&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <h1 class="glitch" data-text="PIXL">PIXL</h1>
+        <p class="subtitle">Der Geist in der Maschine</p>
+    </header>
+
+    <main>
+        <section id="story">
+            <div class="card">
+                <div class="story-header">
+                    <img src="assets/pixl_ghost.png" alt="Pixl Ghost" id="pixl-img">
+                    <h2>Die Legende von Pixl</h2>
+                </div>
+                <div id="story-content" class="typewriter">
+                    <!-- Story will be injected by JS -->
+                </div>
+            </div>
+        </section>
+
+        <section id="game-section">
+            <div class="card">
+                <h2>Pixl Debugger</h2>
+                <p>Hilf Pixl, die Code-Fragmente zu sammeln und den Bugs auszuweichen!</p>
+                <div id="game-container">
+                    <canvas id="gameCanvas"></canvas>
+                    <div id="game-ui">
+                        <div id="score">Fragments: 0</div>
+                        <div id="highscore">Best: 0</div>
+                        <button id="start-btn">System Start</button>
+                    </div>
+                    <div id="game-controls">
+                        <span>[W,A,S,D] oder [Pfeiltasten] zum Bewegen</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Hackerwerkstatt - Pixl.hackerwerkstatt.de</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="game.js"></script>
+</body>
+
+</html>

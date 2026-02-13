@@ -1,0 +1,206 @@
+:root {
+    --bg-color: #050505;
+    --text-color: #e0e0e0;
+    --primary-neon: #00f3ff;
+    --secondary-neon: #ff00ff;
+    --accent-neon: #39ff14;
+    --card-bg: rgba(20, 20, 20, 0.8);
+    --font-main: 'Share Tech Mono', monospace;
+    --font-retro: 'Press Start 2P', cursive;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-main);
+    line-height: 1.6;
+    overflow-x: hidden;
+    background-image:
+        linear-gradient(rgba(0, 243, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 243, 255, 0.03) 1px, transparent 1px);
+    background-size: 30px 30px;
+}
+
+header {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: radial-gradient(circle, rgba(0, 243, 255, 0.1) 0%, transparent 70%);
+}
+
+.glitch {
+    font-size: 5rem;
+    font-family: var(--font-retro);
+    color: var(--primary-neon);
+    position: relative;
+    text-shadow: 0.05em 0 0 rgba(255, 0, 255, 0.75),
+        -0.025em -0.05em 0 rgba(0, 255, 0, 0.75),
+        0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
+    animation: glitch 500ms infinite;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: var(--secondary-neon);
+    letter-spacing: 0.3rem;
+    text-transform: uppercase;
+    margin-top: 1rem;
+}
+
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+section {
+    margin-bottom: 4rem;
+}
+
+.card {
+    background: var(--card-bg);
+    border: 1px solid var(--primary-neon);
+    padding: 2rem;
+    border-radius: 4px;
+    box-shadow: 0 0 15px rgba(0, 243, 255, 0.2);
+    backdrop-filter: blur(5px);
+}
+
+h2 {
+    font-family: var(--font-retro);
+    font-size: 1.2rem;
+    color: var(--primary-neon);
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+}
+
+.typewriter {
+    min-height: 150px;
+    font-size: 1.1rem;
+    border-left: 2px solid var(--accent-neon);
+    padding-left: 1rem;
+}
+
+#game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+canvas {
+    background: #000;
+    border: 2px solid var(--secondary-neon);
+    max-width: 100%;
+}
+
+#game-ui {
+    display: flex;
+    justify-content: space-between;
+    width: 400px;
+    max-width: 100%;
+    font-family: var(--font-retro);
+    font-size: 0.8rem;
+    align-items: center;
+}
+
+button {
+    background: transparent;
+    border: 1px solid var(--accent-neon);
+    color: var(--accent-neon);
+    padding: 0.8rem 1.5rem;
+    font-family: var(--font-retro);
+    font-size: 0.7rem;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+button:hover {
+    background: var(--accent-neon);
+    color: #000;
+    box-shadow: 0 0 15px var(--accent-neon);
+}
+
+#game-controls {
+    font-size: 0.7rem;
+    color: #888;
+}
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    font-size: 0.8rem;
+    color: #555;
+}
+
+.story-header {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+#pixl-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 8px;
+    box-shadow: 0 0 20px var(--primary-neon);
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes glitch {
+    0% {
+        transform: translate(0);
+    }
+
+    20% {
+        transform: translate(-2px, 2px);
+    }
+
+    40% {
+        transform: translate(-2px, -2px);
+    }
+
+    60% {
+        transform: translate(2px, 2px);
+    }
+
+    80% {
+        transform: translate(2px, -2px);
+    }
+
+    100% {
+        transform: translate(0);
+    }
+}
+
+@media (max-width: 600px) {
+    .glitch {
+        font-size: 3rem;
+    }
+
+    .card {
+        padding: 1rem;
+    }
+}
